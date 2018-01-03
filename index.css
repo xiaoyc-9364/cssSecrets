@@ -70,7 +70,6 @@ main::after {
     background-position: 100%;
   }
 }
-
 .box10 {
   padding: 1em;
   border: 1px solid transparent;
@@ -122,6 +121,7 @@ main::after {
   border: 20px solid transparent;
   border-image: 1 url('data:image/svg+xml,    <svg xmlns="http://www.w3.org/2000/svg" width="3" height="3" fill="%2358a">    <polygon points="0,1 1,0 2,0 3,1 3,2 2,3 1,3 0,2"/>    </svg>');
   background-clip: padding-box;
+  box-sizing: border-box;
 }
 
 .box18 {
@@ -142,13 +142,11 @@ main::after {
     transform: rotate(0.5turn);
   }
 }
-
 @keyframes bg {
   50% {
     background: #655;
   }
 }
-
 .box18::before {
   content: '';
   position: absolute;
@@ -175,3 +173,24 @@ circle {
   stroke: #655;
   stroke-width: 32;
 }
+
+.box40 {
+  width: 320x;
+  height: 150px;
+  background-size: contain;
+  background-color: #ff006a;
+  background-blend-mode: luminosity;
+  transition: .5 background-color;
+  background-image: url(./tiger.png);
+}
+
+.box40:hover {
+  background-color: transparent;
+}
+
+.box41 {
+  background: #58a;
+  background: linear-gradient(to left bottom, transparent 50%, rgba(0, 0, 0, 0.4) 0) no-repeat 100% 0/2em 2em, linear-gradient(-135deg, transparent 1.41em, #58a 0);
+}
+
+/*# sourceMappingURL=index.css.map */
