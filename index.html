@@ -8,20 +8,64 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <div class="box1"></div>
-    <div class="box2"></div>
-    <div class="box3"></div>
-    <div class="box4"></div>
-    <div class="box5"></div>
-    <div class="box6"></div>
-    <div class="box7"></div>
-    <div class="box8"></div>
-    <div class="box9"></div>
-    <div class="box10"></div>
-    <div class="box11"></div>
-    <div class="box12"></div>
-    <div class="box13"></div>
-    <div class="box14"></div>
-    <div class="box15"></div>
+    <main class="clearfix"> 
+        <h2>第二章</h2>
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+        <div class="box4"></div>
+        <div class="box5"></div>
+        <div class="box6"></div>
+        <div class="box7"></div>
+        <div class="box8"></div>
+        <div class="box9"></div>
+        <div class="box10"></div>
+    </main>
+   
+    <hr>
+    <main>
+        <h2>第三章</h2>
+        <div class="box11"></div>
+        <div class="box12"></div>
+        <div class="box13"></div>
+        <div class="box14"></div>
+        <div class="box15"></div>
+        <div class="box16"></div>
+        <div class="box17"></div>
+        <div class="box18">20%</div>
+        <div class="box19">60%</div>
+        <div class="box20"></div>
+        <div class="box21"></div>
+    </main>
+    <!-- <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script> -->
+    <script>
+        function $$(selector, context) {
+            context = context || document;
+            const ele = context.querySelectorAll(selector);
+            return Array.prototype.slice.call(ele);
+        }
+
+        $$('.box19').forEach(function(ele) {
+            const p = parseFloat(ele.textContent),
+                NS = "http://www.w3.org/2000/svg",
+                svg = document.createElementNS(NS, 'svg'),
+                circle = document.createElementNS(NS, 'circle'),
+                title = document.createElementNS(NS, 'title');
+            
+            circle.setAttribute("r", 16);
+            circle.setAttribute("cx", 16);
+            circle.setAttribute("cy", 16);
+            circle.setAttribute("stroke-dasharray", p + " 100");
+            svg.setAttribute('viewBox', "0 0 32 32");
+            title.textContent = ele.textContent;
+            ele.textContent = "";
+            svg.appendChild(title);
+            svg.appendChild(circle);
+            ele.appendChild(svg);
+        });
+
+
+
+    </script>
 </body>
 </html>
